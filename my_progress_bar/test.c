@@ -9,7 +9,7 @@ int main()
   const char *lable="|/-\\";
   while(i<=100)
   {
-    printf("[%-120s][%d%%][%c]\r",bar,i,lable[i%4]);
+    printf("[%-100s][%d%%][%c]\r",bar,i,lable[i%4]);
     fflush(stdout);
     bar[i]='#';
     i++;
