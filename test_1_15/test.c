@@ -1,9 +1,12 @@
 #include<stdio.h>
+#include<unistd.h>
 int main()
 {
-  int a = 1;
-  int b = 2;
-  printf("%d\n",a+b);
-  printf("hello world!!\n");
+  for(int i = 0; i < 2; i++)
+  {
+    fork();
+    printf("=");
+    fflush(stdout);
+  }
   return 0;
 }
