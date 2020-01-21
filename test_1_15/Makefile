@@ -1,5 +1,5 @@
-test:test.c
-	gcc $^ -std=c99 -o $@
+test:test.cc
+	g++ $^ -o $@
 .PHONY:clean
 clean:
 	rm test
