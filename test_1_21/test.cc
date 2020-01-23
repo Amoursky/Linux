@@ -21,7 +21,7 @@ int main()
     exit(0);
   }
   printf("father %d\n",getpid());
-  int ret = waitpid(ret1, NULL, 0);
+  int ret = waitpid(-1, NULL, 0);
   printf("wait1 %d\n",ret);
   ret = waitpid(ret2, NULL, 0);
   printf("wait2 %d\n",ret);
