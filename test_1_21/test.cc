@@ -21,8 +21,19 @@ int main()
     exit(0);
   }
   printf("father %d\n",getpid());
-  int ret = waitpid(-1, NULL, 0);
-  printf("wait1 %d\n",ret);
+  int ret = 0;
+  int count = 0;
+  while(1)
+  {
+    ret = waitpid(-1, NULL, WNOHANG);
+    printf("wait1 %d\n",ret); 
+    if(ret > 0)
+    {
+      break;
+    }
+    count++;
+  }
+  printf("count = %d\n",count);
   ret = waitpid(ret2, NULL, 0);
   printf("wait2 %d\n",ret);
   while(1)
