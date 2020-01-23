@@ -4,24 +4,27 @@
 #include<sys/wait.h>
 int main()
 {
-  pid_t ret = fork();
-  if(ret < 0)
-  {
-    perror("fork");
-    return 0;
-  }
-  if(ret == 0)
+  pid_t ret1 = fork();
+  if(ret1 == 0)
   {
     //child
+    printf("child1 %d\n",getpid());
+    sleep(3);
     exit(0);
   }
   //int status = 0;
-  ret = fork();
-  if(ret == 0)
+  pid_t ret2 = fork();
+  if(ret2 == 0)
   {
+    printf("child2 %d\n",getpid());
+    sleep(1);
     exit(0);
   }
-  wait(NULL);
+  printf("father %d\n",getpid());
+  int ret = waitpid(ret1, NULL, 0);
+  printf("wait1 %d\n",ret);
+  ret = waitpid(ret2, NULL, 0);
+  printf("wait2 %d\n",ret);
   while(1)
   {
     sleep(1);
