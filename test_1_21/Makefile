@@ -1,5 +1,5 @@
 test:test.cc
-	g++ $^ -o $@
+	gcc $^ -o $@
 .PHONY:clean
 clean:
 	rm test
