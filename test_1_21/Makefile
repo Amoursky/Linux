@@ -1,4 +1,4 @@
-test:test.cc
+test:test.c
 	gcc $^ -o $@
 .PHONY:clean
 clean:
