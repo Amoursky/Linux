@@ -7,6 +7,7 @@ int main()
   {
     fork();
     printf("=");
+    fflush(stdout);
   }
   return 0;
 }
