@@ -11,10 +11,11 @@ int main()
   {
     //child
     printf("before execl\n"); 
-    execl("/usr/bin/ls","/usr/bin/ls","/",NULL);
+    //execl("usr/bin/ls","usr/bin/ls","/",NULL);
+    execle("ls","ls","/",NULL);
   }
   //father
   wait(NULL);
   printf("after execl %d\n",ret);
   return 0;
-}
+} 
