@@ -9,10 +9,15 @@ int main()
   pid_t ret = fork();
   if(ret == 0)
   {
+    char* env[] = 
+    {
+      "AAA=BBB",
+      NULL
+    };
     //child
     printf("before execl\n"); 
     //execl("usr/bin/ls","usr/bin/ls","/",NULL);
-    execle("ls","ls","/",NULL);
+   execle("./aaa","./aaa","/",NULL,env);
   }
   //father
   wait(NULL);
