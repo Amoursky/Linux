@@ -4,7 +4,7 @@
 
 int main()
 {
-  execl()
+  execl("/usr/bin/ls","/usr/bin/ls","/",NULL);
 
   return 0;
 }
