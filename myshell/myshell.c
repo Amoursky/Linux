@@ -2,6 +2,18 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<sys/wait.h>
+#include<string.h>
+//返回值表示 output中包含了几个有效元素
+int Split(char input[], char* output)
+{
+  char* p = strtok(input, " ");
+  while(p != NULL)
+  {
+    printf("%s\n",p);
+    p = strtok(NULL, " ");
+  }
+  return 0;
+}
 
 int main()
 {
@@ -15,9 +27,12 @@ int main()
     //scanf("%s",command);
     gets(command);//一次读一行数据
     //测试下 scanf 能否读入一行数据
-    printf("%s\n",command);
+    //printf("%s\n",command);
     //3.解析指令,把要执行的是哪个程序识别出来
     // 那些是命令行参数识别出来
+    // 切分结果应该是一个字符串数组
+    char* argv[1024] = {0};
+    int n = Split(command, argv); 
   }  
   return 0;
 }
