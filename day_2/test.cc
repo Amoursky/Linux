@@ -34,7 +34,7 @@ public:
 int main()
 {
     Solution A;
-    std::vector<int> nums = {1,2,3,4,5};
+    vector<int> nums = {1,2,3,4,5};
     int b = 6;
     cout << A.searchInsert(nums,b) << endl; 
     return 0;
