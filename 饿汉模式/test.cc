@@ -11,3 +11,4 @@ class Singleton
  private:
     static T inst_;
 };
+
