@@ -12,3 +12,4 @@ class Singleton
     static T inst_;
 };
 
+
