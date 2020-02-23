@@ -5,3 +5,4 @@ class Test
     void func() const
     {}
 }
+
