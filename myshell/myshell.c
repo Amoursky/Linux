@@ -16,6 +16,7 @@ int Split(char input[], char* output[])
     ++i;
     p = strtok(NULL, " ");
   }
+  output[i] = NULL;// 这个操作是很容易被遗忘的
   return i;
 }
 
@@ -71,4 +72,4 @@ int main()
     CreateProcess(argv,n);
   }  
   return 0;
-} 
+}
