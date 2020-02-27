@@ -14,24 +14,24 @@ int main()
     }
     //fd[0]  读数据
     //fd[1]  写数据
-    ret = fork();
-    if (ret > 0)
-    {
-        //father
-        char buf[1024] = "hehe";
-        write(fd[1], buf, strlen(buf));
-    }
-    else if (ret == 0)
-    {
-        //child
-        char buf_output[1024] = {0};
-        read(fd[0], buf_output, sizeof(buf_output) - 1);
-        printf("child read %s\n", buf_output);
-    }
-    else
-    {
-        perror("fork");
-    }
+    // ret = fork();
+    // if (ret > 0)
+    // {
+    //     //father
+    //     char buf[1024] = "hehe";
+    //     write(fd[1], buf, strlen(buf));
+    // }
+    // else if (ret == 0)
+    // {
+    //     //child
+    //     char buf_output[1024] = {0};
+    //     read(fd[0], buf_output, sizeof(buf_output) - 1);
+    //     printf("child read %s\n", buf_output);
+    // }
+    // else
+    // {
+    //     perror("fork");
+    // }
     // char buf[1024] = "hehe";
     // write(fd[1], buf, strlen(buf));
     // char buf_output[1024] = {0};
