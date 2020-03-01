@@ -19,11 +19,18 @@ int main()
     // sscanf(str, "%d", &num);
     // printf("%d\n",num);
 
-    std::stringstream ss;
+    //C++ 字符串转整数
+    //3. stringstream
+    // std::stringstream ss;
+    // std::string str = "100";
+    // int num = 0;
+    // ss << str;
+    // ss >> num;
+    // std::cout << num << std::endl;
+
+    //4. std::stoi
     std::string str = "100";
-    int num = 0;
-    ss << str;
-    ss >> num;
+    int num = std::stoi(str);
     std::cout << num << std::endl;
     return 0;
 }
