@@ -29,8 +29,12 @@ int main()
     // std::cout << num << std::endl;
 
     //4. std::stoi
-    std::string str = "100";
-    int num = std::stoi(str);
-    std::cout << num << std::endl;
+    // std::string str = "100";
+    // int num = std::stoi(str);
+    // std::cout << num << std::endl;
+
+    //5. boost
+    // std::string str = "100";
+    // int num = boost::lexcal_cast<int>(str);
     return 0;
 }
