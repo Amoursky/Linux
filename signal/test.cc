@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <signal.h>
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+#include <sstream>
 
 //kill
 int main()
@@ -17,6 +19,11 @@ int main()
     // sscanf(str, "%d", &num);
     // printf("%d\n",num);
 
-    
+    std::stringstream ss;
+    std::string str = "100";
+    int num = 0;
+    ss << str;
+    ss >> num;
+    std::cout << num << std::endl;
     return 0;
 }
