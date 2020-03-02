@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 {
     // 为了实现简单，只进行处理一个进程
     if (argc != 3)
-    {
+    { 
         printf("参数有误! ./mykill [signo] [pid]\n");
         return 1;
     }
