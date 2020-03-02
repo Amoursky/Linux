@@ -8,6 +8,7 @@
 
 int main()
 {
-    pthread_create();
+    pthread_t tid;
+    pthread_create(&tid, NULL, );
     return 0;
 }
