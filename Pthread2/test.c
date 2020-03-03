@@ -20,6 +20,7 @@ int main()
     {
         printf("In MainThread\n");
         sleep(1);
+        pthread_cancel(tid);
     }
     return 0;
 }
