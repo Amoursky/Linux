@@ -13,7 +13,7 @@ void* ThreadEntry(void* arg)
     (void) arg;
     while (1)
     {
-        printf("In ThreadEntry\n");
+        printf("In ThreadEntry,  %lu\n", pthread_self());
         sleep(1);
     }
 }
@@ -24,7 +24,7 @@ int main()
     pthread_create(&tid, NULL, ThreadEntry, NULL);
     while (1)
     {
-        printf("In Main Thread\n");
+        printf("In Main Thread, %lu\n", pthread_self());
         sleep(1);
     }
     return 0;
