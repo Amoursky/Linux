@@ -8,11 +8,11 @@ int g_count = 0;
 
 void* ThreadEntry(void* arg)
 {
-    (void) arg;
+    int* p = (int*)arg;
     while (1)
     {
         printf("In ThreadEntry\n");
-        ++g_count;
+        ++*p;
         sleep(1);
     }
     return NULL;
@@ -20,12 +20,13 @@ void* ThreadEntry(void* arg)
 
 int main()
 {
+    int count = 0;
     pthread_t tid;
-    pthread_create(&tid, NULL, ThreadEntry, NULL);
+    pthread_create(&tid, NULL, ThreadEntry, &count);
     pthread_detach(tid);
     while (1)
     {
-        printf("In MainThread %d\n", g_count);
+        printf("In MainThread %d\n", count);
         sleep(1);
     }
     return 0;
