@@ -20,13 +20,13 @@ void* ThreadEntry(void* arg)
 
 int main()
 {
-    int count = 0;
+    int* p = (int*)malloc(4);
     pthread_t tid;
-    pthread_create(&tid, NULL, ThreadEntry, &count);
+    pthread_create(&tid, NULL, ThreadEntry, p);
     pthread_detach(tid);
     while (1)
     {
-        printf("In MainThread %d\n", count);
+        printf("In MainThread %d\n", *p);
         sleep(1);
     }
     return 0;
