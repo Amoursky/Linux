@@ -2,26 +2,31 @@
 #include <unistd.h>
 #include <pthread.h>
 
-int arr[1000000] = {0};
+//  线程之间能共享虚拟地址空间
+
+int g_count = 0;
 
 void* ThreadEntry(void* arg)
 {
     (void) arg;
     while (1)
     {
-        for (size_t i = 0; i < sizeof(arr) / sizeof(arr[0]; ++i))
-        {
-            arr[i] = i;
-        }
-        return NULL;
+        printf("In ThreadEntry\n");
+        ++g_count;
+        sleep(1);
     }
+    return NULL;
 }
 
 int main()
 {
     pthread_t tid;
     pthread_create(&tid, NULL, ThreadEntry, NULL);
-    printf("In MainThread\n");
-    pthread_cancel(tid);
+    pthread_detach(tid);
+    while (1)
+    {
+        printf("In MainThread %d\n", g_count);
+        sleep(1);
+    }
     return 0;
 }
