@@ -2,8 +2,9 @@
 #include <unistd.h>
 #include <pthread.h>
 
-//  线程之间能共享虚拟地址空间
+// 1. 线程之间能共享虚拟地址空间
 
+#if 0
 int g_count = 0;
 
 void* ThreadEntry(void* arg)
@@ -27,6 +28,31 @@ int main()
     while (1)
     {
         printf("In MainThread %d\n", *p);
+        sleep(1);
+    }
+    return 0;
+}
+#endif
+
+// 2。线程异常终止的情况
+ 
+void* ThreadEntry(void* arg)
+{
+    (void) arg;
+    while(1)
+    {
+        sleep(1);
+    }
+    return NULL;
+}
+
+int main()
+{
+    pthread_t tid;
+    pthread_create(&tid, NULL, ThreadEntry, NULL);
+    while(1)
+    {
+        printf("In MainThread\n");
         sleep(1);
     }
     return 0;
