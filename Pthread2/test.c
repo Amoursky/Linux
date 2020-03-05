@@ -123,7 +123,7 @@ int main()
 
 #if 1
 //多线程版本
-#define THREAD_NUM 2
+#define THREAD_NUM 4
 
 typedef struct Arg
 {
@@ -134,8 +134,9 @@ typedef struct Arg
 
 void* ThreadEntry(void* arg)
 {
-    Arg* p = (Arg*)arg;
-    Calc(p->arr, p->beg, p->end);
+    //Arg* p = (Arg*)arg;
+    //Calc(p->arr, p->beg, p->end);
+    while(1);
     return NULL;
 }
 
