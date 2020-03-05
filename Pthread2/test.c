@@ -42,6 +42,8 @@ void* ThreadEntry(void* arg)
     while(1)
     {
         sleep(1);
+        int* p = NULL;
+        *P = 10;
     }
     return NULL;
 }
