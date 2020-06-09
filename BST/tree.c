@@ -8,10 +8,10 @@ typedef struct TreeNode
     struct TreeNode* right;
 } Node;
 
-struct Tree
+typedef struct Tree
 {
     Node* root;
-}
+} Tree;
 
 void insert(Tree* tree, int value)
 {
@@ -82,7 +82,8 @@ int main()
     Tree tree;
     tree.root = NULL;
     int arr[7] = {6, 3, 8, 2, 5, 1, 7};
-    for (int i = 0; i < 7)
+    int i = 0;
+    for (i = 0; i < 7; i++)
     {
         insert(&tree, arr[i]);
     }
