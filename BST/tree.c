@@ -57,7 +57,35 @@ void insert(Tree* tree, int value)
     }
 }
 
+void preorder(Node* node)
+{
+    if (node != NULL)
+    {
+        printf("%d\n", node -> data);
+        preorder(node -> left);
+        preorder(node -> right);
+    }
+}
+
+void inorder(Node* node)
+{
+    if (node != NULL)
+    {
+        inorder(node -> left);
+        printf("%d\n", node -> data);        
+        inorder(node -> right);
+    }
+}
+
 int main()
 {
+    Tree tree;
+    tree.root = NULL;
+    int arr[7] = {6, 3, 8, 2, 5, 1, 7};
+    for (int i = 0; i < 7)
+    {
+        insert(&tree, arr[i]);
+    }
+    preorder(tree.root);
     return 0;
 }
