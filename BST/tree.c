@@ -81,9 +81,9 @@ int main()
 {
     Tree tree;
     tree.root = NULL;
-    int arr[7] = {6, 3, 8, 2, 5, 1, 7};
+    int arr[8] = {6, 3, 8, 4, 2, 5, 1, 7};
     int i = 0;
-    for (i = 0; i < 7; i++)
+    for (i = 0; i < 8; i++)
     {
         insert(&tree, arr[i]);
     }
