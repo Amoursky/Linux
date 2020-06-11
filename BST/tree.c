@@ -57,6 +57,25 @@ void insert(Tree* tree, int value)
     }
 }
 
+int get_hight(Node* node)
+{
+    if (node == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        int left = get_hight(node -> left);
+        int right = get_hight(node -> right);
+        int max = left;
+        if (right > max)
+        {
+            max = right;
+        }
+        return max + 1;
+    }
+}
+
 void preorder(Node* node)
 {
     if (node != NULL)
