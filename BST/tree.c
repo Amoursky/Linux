@@ -108,5 +108,7 @@ int main()
     }
     //preorder(tree.root);
     //inorder(tree.root);
+    int h = get_hight(tree.root);
+    printf("%d\n", h);
     return 0;
 }
