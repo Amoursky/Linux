@@ -107,6 +107,6 @@ int main()
         insert(&tree, arr[i]);
     }
     //preorder(tree.root);
-    inorder(tree.root);
+    //inorder(tree.root);
     return 0;
 }
