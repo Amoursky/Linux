@@ -111,4 +111,5 @@ int main()
     int h = get_hight(tree.root);
     printf("%d\n", h);
     return 0;
+    
 }
